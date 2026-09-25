@@ -1,49 +1,28 @@
 package com.softserve.edu;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import java.time.Duration;
+/**
+ * Task 2. Advanced club search on "Навчай українською".
+ */
+public class ClubSearchTest extends UiTest {
 
-public class ClubSearchTest {
-
-
-    private static final String BASE_URL
-            = "https://devexpress.github.io/devextreme-reactive/react/grid/docs/guides/paging/";
-    private static final Long IMPLICITLY_WAIT_SECONDS = 10L;
-    private static WebDriver driver;
-
-    @BeforeAll
-    public static void beforeAll() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICITLY_WAIT_SECONDS));
-        driver.manage().window().maximize();
-    }
-
-    @AfterAll
-    public static void afterAll() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+    static final String BASE_URL = "http://speak-ukrainian.eastus2.cloudapp.azure.com/dev/";
 
     @BeforeEach
-    public void beforeEach() {
+    void openClubsPage() {
         driver.get(BASE_URL);
     }
 
-    @AfterEach
-    public void afterEach() {
-        // logout; clear cache; delete cookie; delete session;
-        // Save Screen;
-    }
-
     @Test
-    public void checkClubSearch() {
-        // TODO
+    void checkClubSearch() {
+        // 1. Select the city "Харків".
+        // 2. Assert that the club "Новий Кадр" is present.
+        // 3. Open advanced search.
+        // 4. Open page 5 and assert that "Новий Кадр" is present there as well.
+        // Use explicit waits for the results. Do not use Thread.sleep.
+        Assertions.fail("Implement club search checks");
     }
-
 }

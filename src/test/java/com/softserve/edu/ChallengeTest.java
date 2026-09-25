@@ -1,51 +1,25 @@
 package com.softserve.edu;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import java.time.Duration;
-import java.util.List;
-
-public class ChallengeTest {
-
-    private static final String BASE_URL
-            = "https://devexpress.github.io/devextreme-reactive/react/grid/docs/guides/paging/";
-    private static final Long IMPLICITLY_WAIT_SECONDS = 10L;
-    private static WebDriver driver;
-
-    @BeforeAll
-    public static void beforeAll() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICITLY_WAIT_SECONDS));
-        driver.manage().window().maximize();
-    }
-
-    @AfterAll
-    public static void afterAll() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+/**
+ * Task 3 (optional). First YouTube link in the "Навчайся" challenge.
+ */
+public class ChallengeTest extends UiTest {
 
     @BeforeEach
-    public void beforeEach() {
-        driver.get(BASE_URL);
-    }
-
-    @AfterEach
-    public void afterEach() {
-        // logout; clear cache; delete cookie; delete session;
-        // Save Screen;
+    void openHomePage() {
+        driver.get(ClubSearchTest.BASE_URL);
     }
 
     @Test
-    public void checkChallengeYoutube() {
-        // TODO
+    void checkChallengeYoutube() {
+        // 1. Open the "Навчайся" challenge.
+        // 2. Scroll to the video "Спікерка – викладачка української мови, перекладачка, редакторка Наталя Вуйтік".
+        // 3. Switch into the video frame and start the video.
+        // 4. Assert the video URL is https://www.youtube.com/watch?v=JMAF_pSOBws
+        Assertions.fail("Implement the challenge video check");
     }
-
 }

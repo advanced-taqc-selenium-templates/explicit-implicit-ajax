@@ -142,8 +142,9 @@ public class AjaxTest {
         Assertions.assertEquals("2013/12/07", tdNevadaSecondData.getText());
     }
 
-    // Explicit Waits
+    // Explicit Waits. Remove @Disabled to run this reference locally.
     @Test
+    @Disabled
     public void checkIframeAjaxExplicit() {
         // Move to Element
         WebElement position = driver

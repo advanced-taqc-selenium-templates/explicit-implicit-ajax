@@ -2,6 +2,7 @@ package com.softserve.edu.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -218,8 +219,9 @@ public class SimpleTest {
         driver.quit();
     }
 
-    // Ajax2 test
+    // Ajax2 test. Remove @Disabled to run this reference locally.
     @Test
+    @Disabled
     public void checkAjax2() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
